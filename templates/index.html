@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <h2>Welcome to TaskMaster Pro</h2>
+    <p>Streamline your tasks and manage your projects effortlessly with TaskMaster Pro.</p>
+    <a href="{{ url_for('tasks_page') }}" class="btn">Get Started</a>
+</section>
+{% endblock %}
