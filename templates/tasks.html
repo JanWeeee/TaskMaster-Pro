@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="tasks">
+    <h2>Your Tasks</h2>
+    <form id="task-form">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="description" placeholder="Description" required>
+        <input type="datetime-local" id="due_date" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul id="task-list">
+        {% for task in tasks %}
+            <li>
+                {{ task.title }} - {{ task.description }} (Due: {{ task.due_date }})
+                <button onclick="editTask({{ task.id }})">Edit</button>
+                <button onclick="deleteTask({{ task.id }})">Delete</button>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
